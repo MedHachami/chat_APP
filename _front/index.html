@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #f4fffe;
+            background-image: none;
+            flex: 1;
+            padding: 0 .5em;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .select {
+            position: relative;
+            display: flex;
+            width: 20em;
+            height: 3em;
+            line-height: 3;
+            background: #5c6664;
+            overflow: hidden;
+            border-radius: .35em;
+            border: 1px solid black;
+        }
+
+        option {
+            text-align: center;
+        }
+
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: #f4fffe;
+            /* border-bottom: 1px solid black; */
+
+            cursor: pointer;
+            pointer-events: none;
+            transition: .25s all ease;
+        }
+
+        .select:hover::after {
+            color: #00b9a8;
+        }
+  </style>
+
+</head>
+<body>
+    <body>
+        <div class="w-full h-screen">
+            <div class="flex  h-full">
+                <div id="sidebar" class="hidden xl:block sm:flex-2 w-32 border  bg-gray-200 w-10">
+                    
+                </div>
+                <div class="flex flex-col w-full gap-20">
+                    
+                        <div class='flex items-center justify-center h-12 m-24' >
+                            <div class="flex lg:w-1/2 mx-10 rounded sm:w-full " style="border: 1px solid #000;" >
+                                <input class=" w-full border-none bg-transparent px-4 py-1 border-slate-950 text-slate-950 outline-none focus:outline-none " type="search" name="search" id="searchInput" placeholder="Search..." onkeyup="search(event)" />
+                                <button type="submit" class="m-2 rounded bg-blue-600 px-4 py-2 text-white">
+                                    <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                                    <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="select">
+                                <select name="displayOption" id="displayOption" onchange="displayOption()" >
+                                    <option value="all" selected>Discover User</option>
+                                    <option value="already" >Send Request</option>
+                                    <option value="myfriends" >My friends</option>
+                                    
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        
+                    
+                    <div class="w-full px-10 py-2 flex flex-wrap gap-10 " id="notMyfriendsContainer" style="margin-top: -60px;">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+    <script src="./Components/SideBar.js"></script>
+    <script src="./assets/js/index.js" ></script>
+</body>
+
+</html> 
